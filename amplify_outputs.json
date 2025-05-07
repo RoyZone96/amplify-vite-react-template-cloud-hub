@@ -1,0 +1,26 @@
+{
+  "auth": {
+    "cloudc5b65f1bc_app_client": {
+      "IdentityPoolId": "us-east-2:e0c2ae81-7172-491e-b561-3debb8626bfd",
+      "Region": "us-east-2",
+      "UserPoolId": "us-east-2_K3RHpXpon",
+      "UserPoolArn": "arn:aws:cognito-idp:us-east-2:229116416382:userpool/us-east-2_K3RHpXpon",
+      "UserPoolName": "cloudcrewhub5b65f1bc_userpool_5b65f1bc-cloudcrew",
+      "AppClientID": "7rognse4utmmfbljeu9e7mcr50",
+      "AppClientSecret": ""
+    }
+  },
+  "api": {
+    "mygraphqlapi": {
+      "GraphQLAPIIdOutput": "2zv73d2u3bhvvmcagqbgczem4m",
+      "GraphQLAPIEndpointOutput": "https://2zv73d2u3bhvvmcagqbgczem4m.appsync-api.us-east-2.amazonaws.com/graphql",
+      "Region": "us-east-2"
+    }
+  },
+  "storage": {
+    "myappbucket": {
+      "BucketName": "amplify-cloudcrewhub-cloudcrew-22bd5-deployment",
+      "Region": "us-east-2"
+    }
+  }
+}
