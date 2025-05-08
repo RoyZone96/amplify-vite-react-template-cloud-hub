@@ -1,0 +1,15 @@
+{
+  "cloudcrew": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-cloudcrewhub-cloudcrew-22bd5-authRole",
+      "UnauthRoleArn": "arn:aws:iam::229116416382:role/amplify-cloudcrewhub-cloudcrew-22bd5-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::229116416382:role/amplify-cloudcrewhub-cloudcrew-22bd5-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-cloudcrewhub-cloudcrew-22bd5-deployment",
+      "UnauthRoleName": "amplify-cloudcrewhub-cloudcrew-22bd5-unauthRole",
+      "StackName": "amplify-cloudcrewhub-cloudcrew-22bd5",
+      "StackId": "arn:aws:cloudformation:us-east-2:229116416382:stack/amplify-cloudcrewhub-cloudcrew-22bd5/e9ffca00-29cb-11f0-93c8-0a3c25621dab",
+      "AmplifyAppId": "d2rdr2vejby7co"
+    }
+  }
+}
