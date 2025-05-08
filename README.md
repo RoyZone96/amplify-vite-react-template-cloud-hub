@@ -23,6 +23,7 @@ Auth & Security: Amazon Cognito for secure user sign-up/login
 Storage: Amazon S3 for storing project assets, images, and documents
 Monitoring: AWS CloudWatch for application performance and logging
 
+#need to add wireframe to the files and our progress as we make strides, do it after lunch
 
 ## AWS Amplify React+Vite Starter Template
 
