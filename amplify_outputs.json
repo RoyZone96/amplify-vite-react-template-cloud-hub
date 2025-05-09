@@ -18,9 +18,7 @@
     }
   },
   "storage": {
-    "myappbucket": {
-      "BucketName": "amplify-cloudcrewhub-cloudcrew-22bd5-deployment",
-      "Region": "us-east-2"
-    }
+    "aws_region": "us-east-2",
+    "bucket_name": "amplify-cloudcrewhub-cloudcrew-22bd5-deployment"
   }
 }
