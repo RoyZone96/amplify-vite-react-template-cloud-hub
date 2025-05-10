@@ -28,7 +28,7 @@ const projects: Project[] = [
     },
 ];
 
-const ProjGallery: React.FC = () => {
+const Portfolio: React.FC = () => {
     return (
         <div style={{ padding: '20px' }}>
             <h1>Project Gallery</h1>
@@ -62,4 +62,4 @@ const ProjGallery: React.FC = () => {
     );
 };
 
-export default ProjGallery;
+export default Portfolio;

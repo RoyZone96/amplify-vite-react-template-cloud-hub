@@ -1,0 +1,507 @@
+footer{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #30123B;
+  margin-top: 50px;
+  z-index: 1000;
+}
+
+.top-half {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 15px;
+  height: 170px;
+  padding-left: 155px;
+  padding-right: 150px;
+  margin-bottom: 50px
+} 
+
+.bottom-half {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-top:  1px inset #e9ecef;
+  height: 50px;
+  padding-left: 155px;
+  padding-right: 150px;
+}
+
+
+#footer-logo {
+  display: flex;
+  align-items: center;
+
+  margin-top: 50px;
+  margin-bottom: 25px;
+} 
+
+#envelope {
+color: purple
+}
+
+
+
+.email a{
+    color: white;
+    font-size: 20px;
+    margin-top: 25px;
+ 
+}
+
+.email a:hover{
+    color: purple;
+    transition: 0.3s;
+}
+.email{
+  white-space: nowrap;
+}
+.social-list {
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  list-style: none; /* Remove default list styling */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+.social-list li {
+  margin: 0 10px; /* Add some space between the items */
+}
+
+.social-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px; /* Set the width of the button */
+  height: 30px; /* Set the height of the button */
+  border-radius: 50%; /* Make the button rounded */
+  background-color: #6922ac; /* Set the background color */
+  color: gray; /* Set the icon color */
+  text-decoration: none; /* Remove underline from links */
+  transition: background-color 0.3s; /* Add transition for hover effect */
+}
+
+.social-button:hover {
+  background-color: grey; /* Change background color on hover */
+  color: #6922ac
+}
+
+.social-icon {
+  font-size: 17px; /* Set the icon size */
+}
+
+.footer-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding-bottom: 85px; 
+}
+
+/* Target the button id of events and all othe nav links */
+.footer-links li, .footer-events, #footerEventsButton {
+  color: gray;
+  outline: none;
+  margin: 0 30px;
+  font-family: "DM Sans", Helvetica, sans-serif;
+  text-transform: none;
+  font-weight: 400;
+  line-height: 1;
+  font-size: 20px;
+
+ 
+}
+
+.footer-links ul, .footer-events, #footerEventsButton {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 5px;
+  padding-top: 75px;
+
+}
+
+
+.footer-links a {
+  color: grey;
+  text-decoration: none;
+  outline: none;
+ 
+}
+
+.footer-links a:hover {
+  color: purple;
+  transition: 0.3s;
+}
+
+.copyright {
+  color: grey;
+  font-size: 15px;
+}
+
+.menus {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+.mini-footer {
+  display: none;
+}
+footer .dropdown-menu{
+  top:0px;
+  color: rgb(188, 188, 188);
+  ul{
+      padding: 10px 0;
+      display: initial;  
+      li{
+         font-size: 14px;
+         margin:0;
+      }
+  }
+}  
+
+
+
+
+/* Tablet styling */
+@media (max-width: 1040px) {
+  /* Adjust the footer links container */
+  .footer-links {
+    
+    width: 100%;
+  }
+  
+  /*Warp footler links in 3x3 max grid*/
+  .footer-links ul {
+    display: grid;
+    
+    grid-template-columns:  repeat(3, 1fr); /* Maximum of 3 items per row */
+
+    gap: 20px 0px; /* Row gap, column gap */
+    padding-left: 10px;
+    margin-top: 60px;
+
+  }
+  
+
+ 
+}
+
+ 
+/*Large Mobile styling - Medium Tablet*/
+@media  (min-width: 500px) and (max-width: 830px) {
+  .mini-footer {
+    display: block;
+  }
+
+  .full-footer {
+    display: none;
+  } 
+
+  .mini-footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .mini-footer-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  } 
+
+  .mini-footer-menu li {
+    margin: 10px 10px;
+  }
+
+  .mini-footer-menu a {
+    color: rgb(188, 188, 188);
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+
+  
+  }
+
+  .social-list {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+
+  .social-list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+ 
+   padding-right: 50px;
+  }
+  
+  .social-list li {
+    margin: 0 20px; /* Add horizontal spacing between items */
+  }
+  .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Set the width of the button */
+    height: 35px; /* Set the height of the button */
+    border-radius: 50%; /* Make the button rounded */
+    background-color: white; /* Set the background color */
+    color: white; /* Set the icon color */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Add transition for hover effect */
+  }
+  
+  .social-icon {
+    font-size: 25px; /* Set the icon size */
+  }
+ 
+  .copyright {
+   
+    color: grey;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 20px;
+    margin-bottom: 10px;
+   
+  }
+  .mini-footer-menu li {
+    color: grey;
+    padding: 4px;
+    font-family: "DM Sans", Helvetica, sans-serif;
+   
+
+  }
+  .mini-footer-menu ul {
+    display: grid;
+        grid-template-columns:  repeat(2, 1fr);
+        column-gap:40px;
+        
+  }
+
+}
+
+/*small to medium mobile styling*/
+@media (min-width: 300px) and (max-width: 500px) {
+  #footer-logo {
+    display: flex;
+    align-items: center;
+  
+    margin-top: 50px;
+    margin-bottom: 1px;
+  } 
+  .mini-footer {
+    display: block;
+  }
+
+  .full-footer {
+    display: none;
+  } 
+
+  .mini-footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .mini-footer-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  } 
+
+  .mini-footer-menu li {
+    margin: 10px 10px;
+  }
+
+  .mini-footer-menu a {
+    color: rgb(188, 188, 188);
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+
+  
+  }
+
+  .social-list {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+
+  .social-list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+ 
+   padding-right: 50px;
+  }
+  
+  .social-list li {
+    margin: 0 20px; /* Add horizontal spacing between items */
+  }
+  .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Set the width of the button */
+    height: 35px; /* Set the height of the button */
+    border-radius: 50%; /* Make the button rounded */
+    background-color: white; /* Set the background color */
+    color: white; /* Set the icon color */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Add transition for hover effect */
+  }
+  
+  .social-icon {
+    font-size: 25px; /* Set the icon size */
+  }
+ 
+  .copyright {
+   
+    color: grey;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 20px;
+    margin-bottom: 10px;
+   
+  }
+  .mini-footer-menu li {
+    color: grey;
+    padding: 4px;
+    font-family: "DM Sans", Helvetica, sans-serif;
+   
+
+  }
+  .mini-footer-menu ul {
+    display: grid;
+        grid-template-columns:  repeat(2, 1fr);
+        column-gap:40px;
+        
+  }
+
+}
+
+/*small to medium mobile styling*/
+@media (min-width: 300px) and (max-width: 500px) {
+  #footer-logo {
+    display: flex;
+    align-items: center;
+  
+    margin-top: 50px;
+    margin-bottom: 1px;
+  } 
+  .mini-footer {
+    display: block;
+  }
+
+  .full-footer {
+    display: none;
+  } 
+
+  .mini-footer-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .mini-footer-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  } 
+
+  .mini-footer-menu li {
+    margin: 10px 10px;
+  }
+
+  .mini-footer-menu a {
+    color: rgb(188, 188, 188);
+    text-decoration: none;
+    outline: none;
+    font-size: 20px;
+
+  
+  }
+
+  .social-list {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+  }
+
+  .social-list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .social-list li {
+    margin: 0 20px; /* Add horizontal spacing between items */
+  }
+  .social-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px; /* Set the width of the button */
+    height: 35px; /* Set the height of the button */
+    border-radius: 50%; /* Make the button rounded */
+    
+    color: white; /* Set the icon color */
+    text-decoration: none; /* Remove underline from links */
+    transition: background-color 0.3s; /* Add transition for hover effect */
+  }
+  
+  .social-icon {
+    font-size: 25px; /* Set the icon size */
+  }
+
+  .copyright {
+   
+    color: grey;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 20px;
+    margin-bottom: 10px;
+   
+  }
+  .mini-footer-menu li {
+    color: grey;
+    padding: 4px;
+    font-family: "DM Sans", Helvetica, sans-serif;
+   
+
+  }
+
+}
