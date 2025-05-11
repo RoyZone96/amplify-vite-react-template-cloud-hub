@@ -35,29 +35,12 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-ul {
-  padding-inline-start: 0;
-  margin-block-start: 0;
-  margin-block-end: 0;
-  list-style-type: none;
-  display: flex;
-  flex-direction: column;
-  margin: 8px 0;
-  border: 1px solid black;
-  gap: 1px;
-  background-color: black;
-  border-radius: 8px;
-  overflow: auto;
-}
+
 
 li {
-  background-color: white;
   padding: 8px;
 }
 
-li:hover {
-  background: #dadbf9;
-}
 
 a {
   font-weight: 800;
