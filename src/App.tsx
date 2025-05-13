@@ -6,10 +6,9 @@ import Tracker from "./Routes/Tracker/Tracker";
 import Login from "./Routes/Login/Login";
 import Registration from "./Routes/Registration/Registration";
 import "./App.css";
-
 import Footer from "./Components/Footer/Footer";
-import type { Schema } from "../amplify/data/resources";
-import { generateClient } from "aws-amplify/data";
+// import type { Schema } from "../amplify/data/resources";
+// import { generateClient } from "aws-amplify/data";
 
 
 
