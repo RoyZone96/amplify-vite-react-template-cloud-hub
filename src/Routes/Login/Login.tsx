@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import  API  from "aws-amplify";
+// import API from "aws-amplify";
 import "./Login.css";
 
 const Login: React.FC = () => {
@@ -8,37 +8,19 @@ const Login: React.FC = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  // Dummy function to simulate login
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
 
     try {
-      const loginData = {
-        query: `
-          mutation Login($email: String!, $password: String!) {
-            login(email: $email, password: $password) {
-              token
-              user {
-                id
-                email
-              }
-            }
-          }
-        `,
-        variables: {
-          email,
-          password,
-        },
-      };
-
-      const response = await API.graphql(loginData);
-      const { data }: any = response;
-
-      if (data?.login?.token) {
-        console.log("Login successful:", data);
-        // Save token to localStorage or context and redirect
+      // Simulate a successful login
+      if (email === "test@example.com" && password === "password123") {
+        console.log("Login successful:", { email });
+        alert("Login successful!");
+        // Save token to localStorage or context and redirect (if needed)
       } else {
-        throw new Error("Login failed");
+        throw new Error("Invalid email or password");
       }
     } catch (err: any) {
       setError(err.message || "An error occurred");

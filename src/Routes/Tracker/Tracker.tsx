@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { API, graphqlOperation, Storage } from "aws-amplify";
-import { listJobs } from "../../graphql/queries";
-import { createJob, updateJob, deleteJob } from "../../graphql/mutations";
+// import { API, graphqlOperation, Storage } from "aws-amplify";
+// import { listJobs } from "../../graphql/queries";
+//import { createJob, updateJob, deleteJob } from "../../graphql/mutations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
-
 interface Job {
   id: string;
   title: string;
@@ -56,7 +55,11 @@ const styles = {
 };
 
 const Tracker: React.FC = () => {
-  const [jobs, setJobs] = useState<Job[]>([]);
+  const [jobs, setJobs] = useState<Job[]>([
+    { id: "1", title: "Software Engineer", company: "Tech Corp", status: "Applied" },
+    { id: "2", title: "Product Manager", company: "Innovate Inc", status: "Interviewing" },
+    { id: "3", title: "Data Scientist", company: "DataWorks", status: "Offered" },
+  ]);
   const [newJob, setNewJob] = useState({
     title: "",
     company: "",
@@ -64,51 +67,44 @@ const Tracker: React.FC = () => {
   });
   const [showJobPopup, setShowJobPopup] = useState(false);
 
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const result: any = await API.graphql(graphqlOperation(listJobs));
-        setJobs(result.data.listJobs.items);
-      } catch (error) {
-        console.error("Error fetching jobs:", error);
-      }
+  // Function to create a new job
+  const createJob = (job: Omit<Job, "id">): Job => {
+    const newJobEntry: Job = {
+      id: (jobs.length + 1).toString(),
+      ...job,
     };
+    return newJobEntry;
+  };
 
-    fetchJobs();
-  }, []);
+  // Function to update a job's status
+  const updateJob = (id: string, updatedFields: Partial<Job>): Job[] => {
+    return jobs.map((job) =>
+      job.id === id ? { ...job, ...updatedFields } : job
+    );
+  };
 
-  const addJob = async () => {
+  // Function to delete a job
+  const deleteJob = (id: string): Job[] => {
+    return jobs.filter((job) => job.id !== id);
+  };
+
+  const handleAddJob = () => {
     if (newJob.title && newJob.company) {
-      try {
-        const result: any = await API.graphql(
-          graphqlOperation(createJob, { input: newJob })
-        );
-        setJobs([...jobs, result.data.createJob]);
-        setNewJob({ title: "", company: "", status: "Applied" });
-        setShowJobPopup(false);
-      } catch (error) {
-        console.error("Error adding job:", error);
-      }
+      const newJobEntry = createJob(newJob);
+      setJobs([...jobs, newJobEntry]);
+      setNewJob({ title: "", company: "", status: "Applied" });
+      setShowJobPopup(false);
     }
   };
 
-  const updateJobStatus = async (id: string, status: string) => {
-    try {
-      const updatedJob = { id, status };
-      await API.graphql(graphqlOperation(updateJob, { input: updatedJob }));
-      setJobs(jobs.map((job) => (job.id === id ? { ...job, status } : job)));
-    } catch (error) {
-      console.error("Error updating job status:", error);
-    }
+  const handleUpdateJobStatus = (id: string, status: string) => {
+    const updatedJobs = updateJob(id, { status });
+    setJobs(updatedJobs);
   };
 
-  const deleteJob = async (id: string) => {
-    try {
-      await API.graphql(graphqlOperation(deleteJob, { input: { id } }));
-      setJobs(jobs.filter((job) => job.id !== id));
-    } catch (error) {
-      console.error("Error deleting job:", error);
-    }
+  const handleDeleteJob = (id: string) => {
+    const updatedJobs = deleteJob(id);
+    setJobs(updatedJobs);
   };
 
   return (
@@ -142,7 +138,7 @@ const Tracker: React.FC = () => {
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>
                 <select
                   value={job.status}
-                  onChange={(e) => updateJobStatus(job.id, e.target.value)}
+                  onChange={(e) => handleUpdateJobStatus(job.id, e.target.value)}
                 >
                   <option value="Applied">Applied</option>
                   <option value="Interviewing">Interviewing</option>
@@ -152,7 +148,7 @@ const Tracker: React.FC = () => {
               </td>
               <td style={{ border: "1px solid #ddd", padding: "8px" }}>
                 <button
-                  onClick={() => deleteJob(job.id)}
+                  onClick={() => handleDeleteJob(job.id)}
                   style={{
                     background: "none",
                     border: "none",
@@ -197,7 +193,7 @@ const Tracker: React.FC = () => {
             </label>
           </div>
           <button
-            onClick={addJob}
+            onClick={handleAddJob}
             style={{ ...styles.button, ...styles.addButton }}
           >
             Add
@@ -216,6 +212,5 @@ const Tracker: React.FC = () => {
       )}
     </div>
   );
-};
-
+}
 export default Tracker;
