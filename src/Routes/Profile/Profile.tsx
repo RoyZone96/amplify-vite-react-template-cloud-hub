@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Storage } from '@aws-amplify/storage';
-import { API, graphqlOperation } from 'aws-amplify';
-import { getUser, updateUser } from '../../graphql/queries'; // Adjust paths as needed
+import { API, graphqlOperation, Storage } from 'aws-amplify';
+import { getUser } from '../../graphql/queries'; // For fetching user data
+import { updateUser } from '../../graphql/mutations'; // For updating user data
 import Portfolio from '../../Components/Portfolio/Portfolio';
 import './Profile.css';
 
+ 
 const Profile: React.FC = () => {
     const [user, setUser] = useState({
         id: 'user-id', // Replace with the actual user ID

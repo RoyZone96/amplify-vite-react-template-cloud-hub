@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopNav from "./Components/TopNav/TopNav";
 import Landing from "./Routes/Landing/Landing";
@@ -7,8 +8,7 @@ import Login from "./Routes/Login/Login";
 import Registration from "./Routes/Registration/Registration";
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
-// import type { Schema } from "../amplify/data/resources";
-// import { generateClient } from "aws-amplify/data";
+
 
 
 

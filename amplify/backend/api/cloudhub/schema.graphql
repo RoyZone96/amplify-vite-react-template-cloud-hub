@@ -1,0 +1,39 @@
+type User @model @auth(rules: [
+  { allow: owner }, # Allow users to access their own data
+  { allow: public, operations: [read] } # Allow public read access
+]) {
+  id: ID!
+  username: String!
+  password: String!
+  name: String!
+  email: String!
+  bio: String
+  avatar: String
+
+  projects: [Project] @hasMany(fields: ["id"]) # One-to-Many relationship
+  jobs: [Job] @hasMany(fields: ["id"]) # One-to-Many relationship
+}
+
+type Project @model @auth(rules: [
+  { allow: owner }, # Allow the owner to manage their projects
+  { allow: public, operations: [read] } # Allow public read access
+]) {
+  id: ID!
+  name: String!
+  description: String!
+  imageUrl: String!
+  userID: ID! # Foreign key to User
+  user: User @belongsTo(fields: ["userID"]) # Many-to-One relationship
+}
+
+type Job @model @auth(rules: [
+  { allow: owner }, # Allow the owner to manage their jobs
+  { allow: public, operations: [read] } # Allow public read access
+]) {
+  id: ID!
+  title: String!
+  company: String!
+  status: String!
+  userID: ID! # Foreign key to User
+  user: User @belongsTo(fields: ["userID"]) # Many-to-One relationship
+}

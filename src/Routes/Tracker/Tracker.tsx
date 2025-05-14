@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { API, graphqlOperation } from "aws-amplify";
+import { API, graphqlOperation, Storage } from "aws-amplify";
 import { listJobs } from "../../graphql/queries";
 import { createJob, updateJob, deleteJob } from "../../graphql/mutations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
